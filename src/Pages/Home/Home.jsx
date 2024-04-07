@@ -6,7 +6,7 @@ const Home = () => {
     const data = useLoaderData()
     
     return (
-        <div>
+        <div className="max-w-6xl mx-auto">
            <Banner/>
            <Services data={data}/>
         </div>
