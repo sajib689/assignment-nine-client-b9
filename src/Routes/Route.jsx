@@ -7,6 +7,9 @@ import Error from './../Components/Error/Error';
 import Login from './../Authorization/Login';
 import Register from './../Authorization/Register';
 import Details from "../Components/Details/Details";
+import About from "../Components/About/About";
+import Contact from "../Components/Contact/Contact";
+import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 
   const router = createBrowserRouter([
     {
@@ -31,6 +34,18 @@ import Details from "../Components/Details/Details";
         {
           path: "/register",
           element: <Register/>,
+        },
+        {
+          path: "/about",
+          element: <About/>,
+        },
+        {
+          path: "/contact",
+          element: <Contact/>,
+        },
+        {
+          path: "/update",
+          element: <UpdateProfile/>,
         },
       ]
     },
