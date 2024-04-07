@@ -1,0 +1,81 @@
+[
+    {
+      "image": "https://media.istockphoto.com/id/1138429558/photo/rows-of-shelves.jpg?s=612x612&w=0&k=20&c=0E4uvaa-THb-Wj-QZKpUSPgwjfIMFW3vH7NRx1iWMIc=",
+      "estate_title": "Spacious Warehouse Facility",
+      "id": 1,
+      "segment_name": "Industrial",
+      "description": "A large warehouse suitable for storage and distribution purposes.",
+      "price": "$5000/month",
+      "status": "rent",
+      "area": "10,000 sq ft",
+      "location": "Industrial Park, City Name",
+      "facilities": ["Loading docks", "Forklift access", "Security system"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/1320950393/photo/cars-on-production-line-in-factory.jpg?s=612x612&w=0&k=20&c=WgJLxtOWIGt80cbC0OFc3wQAhraIxlz_H7l-ySDxkOw=",
+      "estate_title": "Modern Production Plant",
+      "id": 2,
+      "segment_name": "Industrial",
+      "description": "State-of-the-art factory equipped for manufacturing operations.",
+      "price": "$2,000,000",
+      "status": "sale",
+      "area": "50,000 sq ft",
+      "location": "Industrial Zone, City Name",
+      "facilities": ["Assembly lines", "Quality control labs", "Employee facilities"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://www.stefaniexchangers.com/wp-content/uploads/2023/11/stefani-ref-frigoveneta-00.jpg",
+      "estate_title": "Cold Storage Facility",
+      "id": 3,
+      "segment_name": "Industrial",
+      "description": "Specialized cold storage unit suitable for perishable goods.",
+      "price": "$8000/month",
+      "status": "rent",
+      "area": "5000 sq ft",
+      "location": "Commercial District, City Name",
+      "facilities": ["Temperature control", "Loading bays", "Backup generators"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://www.nrel.gov/news/program/2020/images/news-jisea-istock-510637684.jpg",
+      "estate_title": "Renewable Energy Power Plant",
+      "id": 4,
+      "segment_name": "Industrial",
+      "description": "Green energy power plant utilizing solar and wind sources.",
+      "price": "$15,000,000",
+      "status": "sale",
+      "area": "100 acres",
+      "location": "Outskirts, City Name",
+      "facilities": ["Solar panels", "Wind turbines", "Grid connection"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://www.nextlandgroup.com/seniip/wp-content/uploads/2021/04/DJI_0167-scaled-1.jpg",
+      "estate_title": "Integrated Industrial Park",
+      "id": 5,
+      "segment_name": "Industrial",
+      "description": "Comprehensive industrial park with various facilities for manufacturing and logistics businesses.",
+      "price": "$10,000,000",
+      "status": "sale",
+      "area": "200 acres",
+      "location": "Suburb, City Name",
+      "facilities": ["Warehousing units", "Office spaces", "Transportation hub"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://www.assemblymag.com/ext/resources/LatestHeadlines/Boeing-8-22.jpg?1534899772",
+      "estate_title": "Factory Complex",
+      "id": 6,
+      "segment_name": "Industrial",
+      "description": "Complex of interconnected factories suitable for large-scale production operations.",
+      "price": "$7500/month per unit",
+      "status": "rent",
+      "area": "20,000 sq ft per unit",
+      "location": "Industrial Area, City Name",
+      "facilities": ["Multiple production lines", "Cafeteria", "Parking space"],
+      "view_property_button": "View Property"
+    }
+  ]
+  
