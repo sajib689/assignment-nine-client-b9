@@ -5,7 +5,7 @@ AOS.init();
 const Services = ({ data }) => {
   
   return (
-    <div className="mt-[100px] mb-[100px]">
+    <div className="mt-[100px] mb-[100px] ">
       <div>
         <h1 data-aos="zoom-in-right" className="text-5xl font-bold text-center">Our Services</h1>
         <hr className="md:w-[250px] mx-auto" />

@@ -8,7 +8,7 @@ const Details = () => {
     const service = services.find( s => s.id === parseId)
     console.log(service)
     return (
-        <div>
+        <div className='max-w-6xl mx-auto'>
             <h1>{service.estate_title}</h1>
         </div>
     );
