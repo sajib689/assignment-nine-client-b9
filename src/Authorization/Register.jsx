@@ -5,7 +5,9 @@ import Swal from 'sweetalert2'
 import {useNavigate} from 'react-router-dom'
 import { updateProfile } from "firebase/auth";
 import toast from 'react-hot-toast';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Register = () => {
   const {register,google,gitHub} = useContext(AuthContext)
   const navigate = useNavigate()
@@ -42,7 +44,6 @@ const Register = () => {
         displayName: displayName,
         photoURL: photoURL
       })
-      console.log(user)
       if(user) {
         Swal.fire({
           position: "top-center",
@@ -66,7 +67,7 @@ const Register = () => {
     })
   }
     return (
-        <div className="w-full mb-[50px] bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+        <div data-aos="fade-right" className="w-full mb-[50px] bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
       <h1 className="text-2xl font-bold text-center">Sign In</h1>
       <form onSubmit={handleRegister} noValidate="" action="" className="space-y-6">
         <div className="space-y-1 text-sm">
@@ -116,11 +117,7 @@ const Register = () => {
             placeholder="Password"
             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
           />
-          <div className="flex justify-end text-xs dark:text-gray-600">
-            <a rel="noopener noreferrer" href="#">
-              Forgot Password?
-            </a>
-          </div>
+          
         </div>
         <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign In
