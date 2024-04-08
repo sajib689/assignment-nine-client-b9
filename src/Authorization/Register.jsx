@@ -1,11 +1,49 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Register = () => {
+  const {register,google} = useContext(AuthContext)
+  const handleGoogle = () => {
+    google()
+  }
+  const handleRegister = e => {
+    e.preventDefault()
+    const form = e.target 
+    const name = form.name.value
+    const photo = form.photo.value
+    const email = form.email.value 
+    const password = form.password.value
+    register(email, password)
+    .then(result => {
+      const user = result.user 
+      console.log(user)
+      if(user) {
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Register Success!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+      form.reset()
+    })
+    .catch(err => {
+      if(err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.message}`,
+        });
+      }
+    })
+  }
     return (
         <div className="w-full mb-[50px] bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
       <h1 className="text-2xl font-bold text-center">Sign In</h1>
-      <form noValidate="" action="" className="space-y-6">
+      <form onSubmit={handleRegister} noValidate="" action="" className="space-y-6">
         <div className="space-y-1 text-sm">
           <label htmlFor="name" className="block dark:text-gray-600">
             Name
@@ -59,9 +97,9 @@ const Register = () => {
             </a>
           </div>
         </div>
-        <Link className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
+        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign In
-        </Link>
+        </button>
       </form>
       <div className="flex items-center pt-4 space-x-1">
         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
@@ -71,7 +109,7 @@ const Register = () => {
         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
       </div>
       <div className="flex justify-center space-x-4">
-        <button aria-label="Log in with Google" className="p-3 rounded-sm">
+        <button onClick={handleGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"

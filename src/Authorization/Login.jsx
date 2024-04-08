@@ -1,19 +1,53 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Login = () => {
+  const {login} = useContext(AuthContext)
+
+  const handleLogin = e => {
+    e.preventDefault()
+    const form = e.target 
+    const email = form.email.value 
+    const password = form.password.value
+    login(email, password)
+    .then(result => {
+      const user = result.user 
+      if(user) {
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Login Success!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+      form.reset()
+    })
+    .catch(err => {
+      if(err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.message}`,
+        });
+      }
+    })
+  }
   return (
     <div className="mb-[50px] w-full bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
       <h1 className="text-2xl font-bold text-center">Login</h1>
-      <form noValidate="" action="" className="space-y-6">
+      <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">
         <div className="space-y-1 text-sm">
-          <label htmlFor="username" className="block dark:text-gray-600">
-            Username
+          <label htmlFor="email" className="block dark:text-gray-600">
+            Email
           </label>
           <input
             type="text"
-            name="username"
-            id="username"
-            placeholder="Username"
+            name="email"
+            id="email"
+            placeholder="Email"
             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
           />
         </div>
@@ -34,9 +68,9 @@ const Login = () => {
             </a>
           </div>
         </div>
-        <Link className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
+        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign in
-        </Link>
+        </button>
       </form>
       <div className="flex items-center pt-4 space-x-1">
         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>

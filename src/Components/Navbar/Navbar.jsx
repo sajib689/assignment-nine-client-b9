@@ -1,6 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo1.png";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Swal } from 'sweetalert2';
 const Navbar = () => {
+  const {user,logout} = useContext(AuthContext)
+  const handleSignOut = () => {
+    logout()
+    .then( () => {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Sign Out Success!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+    .catch( err => {
+      if(err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.message}`,
+        });
+      }
+    })
+  }
   const links = (
     <>
       <li className="flex">
@@ -41,7 +66,26 @@ const Navbar = () => {
         </a>
         <ul className="items-stretch hidden space-x-3 lg:flex">{links}</ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <Link className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Login</Link>
+          <div>
+            {
+              user ?
+              <p className="me-3">{user?.email}</p>
+              :
+              <></>
+            }
+          </div>
+         <>
+         {
+            user ? 
+            <Link onClick={handleSignOut}  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign Out</Link>
+            :
+            <>
+              <Link to='/login' className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign In</Link>
+              <Link to='/register' className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign Up</Link>
+            </>
+          }
+         </>
+          
         </div>
         <button className="p-4 lg:hidden">
           <svg

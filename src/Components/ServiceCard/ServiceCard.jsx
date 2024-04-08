@@ -19,7 +19,7 @@ const ServiceCard = ({ service }) => {
         <p>{description}</p>
         <p>Price: {price}</p>
         <div className="card-actions justify-start">
-          <Link to={`details/${id}`} className="btn hover:bg-[#06121c] bg-[#fc5a34] text-white rounded-none">Buy Now</Link>
+          <Link to={`details/${id}`} className="btn hover:bg-[#06121c] bg-[#fc5a34] text-white rounded-none">View Property</Link>
         </div>
       </div>
     </div>
