@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
@@ -7,9 +7,17 @@ import { updateProfile } from "firebase/auth";
 import toast from 'react-hot-toast';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 AOS.init();
 const Register = () => {
   const {register,google,gitHub} = useContext(AuthContext)
+  const [eye, setEye] = useState(false)
+  const handleEye = () => {
+    setEye(true)
+  }
+  const handleEyeHide = () => {
+    setEye(false)
+  }
   const navigate = useNavigate()
   const handleGoogle = () => {
     google()
@@ -123,7 +131,7 @@ const Register = () => {
             Password
           </label>
           <input
-            type="password"
+           type={eye === true ? "text" : "password"}
             name="password"
             id="password"
             placeholder="Password"
@@ -131,6 +139,18 @@ const Register = () => {
           />
           
         </div>
+        <>
+        {
+          eye === true ?
+          <div onClick={handleEyeHide} className="cursor-pointer absolute top-[56%] right-[42px]">
+          <FaRegEyeSlash  />
+          </div>
+          :
+          <div onClick={handleEye} className="cursor-pointer absolute top-[56%] right-[42px]">
+        <FaRegEye />
+        </div>
+        }
+        </>
         <button className="animate__animated animate__bounce block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign In
         </button>

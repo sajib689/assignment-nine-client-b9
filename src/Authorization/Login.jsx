@@ -1,13 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import {useNavigate} from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaRegEye,FaRegEyeSlash  } from "react-icons/fa";
+
 AOS.init();
 const Login = () => {
   const {login,google,gitHub} = useContext(AuthContext)
+  const [eye, setEye] = useState(false)
+  const handleEye = () => {
+    setEye(true)
+  }
+  const handleEyeHide = () => {
+    setEye(false)
+  }
   const navigate = useNavigate()
   const handleGoogle = () => {
     google()
@@ -80,14 +89,26 @@ const Login = () => {
             Password
           </label>
           <input
-            type="password"
+            type={eye === true ? "text" : "password"}
             name="password"
             id="password"
             placeholder="Password"
-            className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            className="w-full relative px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
           />
-        
+      
         </div>
+        <>
+        {
+          eye === true ?
+          <div onClick={handleEyeHide} className="cursor-pointer absolute top-[38%] right-[45px]">
+          <FaRegEyeSlash  />
+          </div>
+          :
+          <div onClick={handleEye} className="cursor-pointer absolute top-[38%] right-[45px]">
+        <FaRegEye />
+        </div>
+        }
+        </>
         <button className="animate__animated animate__bounce block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign in
         </button>
