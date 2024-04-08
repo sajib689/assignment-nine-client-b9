@@ -4,19 +4,19 @@ const Navbar = () => {
   const links = (
     <>
       <li className="flex">
-        <Link to='/' className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">
+        <NavLink to='/' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
           Home
-        </Link>
+        </NavLink>
       </li>
       <li className="flex">
-        <Link to='/about' className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">
+        <NavLink to='/about' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
           About Us
-        </Link>
+        </NavLink>
       </li>
       <li className="flex">
-        <Link to='/contact' className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">
+        <NavLink to='/contact' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
           Contact Us
-        </Link>
+        </NavLink>
       </li>
     </>
   );
@@ -41,10 +41,7 @@ const Navbar = () => {
         </a>
         <ul className="items-stretch hidden space-x-3 lg:flex">{links}</ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded">Sign in</button>
-          <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">
-            Sign up
-          </button>
+          <Link className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Login</Link>
         </div>
         <button className="p-4 lg:hidden">
           <svg
