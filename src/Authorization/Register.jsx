@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
+import {useNavigate} from 'react-router-dom'
 
 const Register = () => {
   const {register,google} = useContext(AuthContext)
+  const navigate = useNavigate()
   const handleGoogle = () => {
     google()
   }
@@ -29,6 +31,7 @@ const Register = () => {
         });
       }
       form.reset()
+      navigate('/')
     })
     .catch(err => {
       if(err) {

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 AOS.init();
 const ServiceCard = ({ service }) => {
     const{id, image,estate_title,description,price} = service;
-  console.log(service);
+ 
   return (
     <div  data-aos="fade-up-right" className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>

@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Loader from './../Loader/Loader';
 
 const Details = () => {
   const { id } = useParams();
@@ -16,6 +19,8 @@ const Details = () => {
     location,
     facilities,
   } = service;
+  const {loading} = useContext(AuthContext)
+  if(loading) return <Loader/>
   return (
     <div className="max-w-6xl mx-auto hero mb-[80px] mt-[50px] bg-base-200">
       <div className="hero-content flex-col lg:flex-row">

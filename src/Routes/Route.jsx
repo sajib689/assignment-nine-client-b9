@@ -10,6 +10,7 @@ import Details from "../Components/Details/Details";
 import About from "../Components/About/About";
 import Contact from "../Components/Contact/Contact";
 import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
+import PrivateRoute from './PrivateRoute';
 
   const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
         },
         {
           path: "/details/:id",
-          element: <Details/>,
+          element: <PrivateRoute><Details/></PrivateRoute>,
           loader: () => fetch('/data.json')
         },
         {
