@@ -49,7 +49,7 @@ const Login = () => {
   }
   return (
     <div data-aos="fade-right" className="mb-[50px] w-full bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
-      <h1 className="text-2xl font-bold text-center">Login</h1>
+      <h1 className="text-2xl font-bold text-center animate__animated animate__bounce">Login</h1>
       <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">
         <div className="space-y-1 text-sm">
           <label htmlFor="email" className="block dark:text-gray-600">
@@ -76,7 +76,7 @@ const Login = () => {
           />
         
         </div>
-        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
+        <button className="animate__animated animate__bounce block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
           Sign in
         </button>
       </form>

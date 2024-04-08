@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Route'
 import AuthProvider from './AuthProvider/AuthProvider'
 import { Toaster } from 'react-hot-toast';
+import 'animate.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className=' bg-base-200'>

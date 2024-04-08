@@ -27,7 +27,7 @@ const UpdateProfile = () => {
     console.log(user)
     return (
         <div className="w-full mb-[50px] bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
-        <h1 className="text-2xl font-bold text-center">Update Profile</h1>
+        <h1 className="text-2xl font-bold text-center animate__animated animate__bounce">Update Profile</h1>
         <form onSubmit={handleUpdateProfile}  noValidate="" action="" className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="name" className="block dark:text-gray-600">

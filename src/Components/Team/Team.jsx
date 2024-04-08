@@ -5,7 +5,7 @@ const Team = () => {
   return (
     <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
       <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
-        <h1 data-aos="fade-down-right" className="text-4xl font-bold leading-none text-center sm:text-5xl">
+        <h1 data-aos="fade-down-right" className="animate__animated animate__bounce text-4xl font-bold leading-none text-center sm:text-5xl">
           Our Team
         </h1>
         <p data-aos="fade-down-right" className="max-w-2xl text-center dark:text-gray-600">
