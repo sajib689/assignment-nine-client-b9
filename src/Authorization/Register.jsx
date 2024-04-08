@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import {useNavigate} from 'react-router-dom'
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const {register,google} = useContext(AuthContext)
@@ -20,6 +21,10 @@ const Register = () => {
     register(email, password)
     .then(result => {
       const user = result.user 
+      updateProfile(user, {
+        displayName: displayName,
+        photoURL: photoURL
+      })
       console.log(user)
       if(user) {
         Swal.fire({
