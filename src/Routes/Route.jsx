@@ -46,7 +46,7 @@ import PrivateRoute from './PrivateRoute';
         },
         {
           path: "/update",
-          element: <UpdateProfile/>,
+          element: <PrivateRoute><UpdateProfile/></PrivateRoute>,
         },
       ]
     },
