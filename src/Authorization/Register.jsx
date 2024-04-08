@@ -145,7 +145,7 @@ const Register = () => {
           <div onClick={handleEyeHide} className="cursor-pointer absolute top-[56%] right-[42px]">
           <FaRegEyeSlash  />
           </div>
-          :
+          : 
           <div onClick={handleEye} className="cursor-pointer absolute top-[56%] right-[42px]">
         <FaRegEye />
         </div>
