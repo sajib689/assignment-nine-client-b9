@@ -4,7 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Swal } from "sweetalert2";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-
+  
   const handleSignOut = () => {
     logout()
       .then(() => {
@@ -104,7 +104,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="z-10	menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {links}
           </ul>
