@@ -6,6 +6,7 @@ import Testimonial from "../../Components/Testimonial/Testimonial";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Loader from './../../Components/Loader/Loader';
+import {Helmet} from "react-helmet";
 
 const Home = () => {
     const data = useLoaderData()
@@ -13,6 +14,9 @@ const Home = () => {
     if(loading) return <Loader/>
     return (
         <div className="max-w-6xl mx-auto">
+            <Helmet>
+            <title>Sajib Industrail | Home</title>
+            </Helmet>
            <Banner/>
            <Services data={data}/>
            <Team/>

@@ -9,7 +9,7 @@ const Testimonial = () => {
         Customer Testimonials
       </h1>
     </div>
-    <div data-aos="zoom-in" className="container grid grid-cols lg:grid-cols-3 md:grid-cols-3 gap-6 items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
+    <div data-aos="zoom-in" className="container grid grid-cols lg:grid-cols-3 md:grid-cols-2 gap-6 items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
       <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
         <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
           <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
