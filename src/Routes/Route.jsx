@@ -21,7 +21,7 @@ import PrivateRoute from './PrivateRoute';
         {
             path: "/",
             element: <Home/>,
-            loader: () => fetch('data.json')
+            loader: () => fetch('/data.json')
         },
         {
           path: "/details/:id",

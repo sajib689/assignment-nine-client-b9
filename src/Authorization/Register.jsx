@@ -13,10 +13,22 @@ const Register = () => {
   const navigate = useNavigate()
   const handleGoogle = () => {
     google()
+    .then( result => {
+      const user = result.user
+    })
+    .catch( err => {
+      console.error(err)
+    })
     navigate('/')
   }
   const handleGitHub = () => {
     gitHub()
+    .then( result => {
+      const user = result.user
+    })
+    .catch( err => {
+      console.error(err)
+    })
     navigate('/')
   }
   const handleRegister = e => {
