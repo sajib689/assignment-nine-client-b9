@@ -13,8 +13,8 @@ const Register = () => {
   const handleRegister = e => {
     e.preventDefault()
     const form = e.target 
-    const name = form.name.value
-    const photo = form.photo.value
+    const displayName = form.displayName.value
+    const photoURL = form.photoURL.value
     const email = form.email.value 
     const password = form.password.value
     register(email, password)
@@ -53,7 +53,7 @@ const Register = () => {
           </label>
           <input
             type="text"
-            name="name"
+            name="displayName"
             id="name"
             placeholder="Name"
             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
@@ -77,7 +77,7 @@ const Register = () => {
           </label>
           <input
             type="text"
-            name="photo"
+            name="photoURL"
             id="photo"
             placeholder="Photo URL"
             className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
