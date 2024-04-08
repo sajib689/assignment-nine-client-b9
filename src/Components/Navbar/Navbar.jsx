@@ -1,48 +1,85 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/logo1.png";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Swal } from 'sweetalert2';
+import { Swal } from "sweetalert2";
 const Navbar = () => {
-  const {user,logout} = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext);
   const handleSignOut = () => {
     logout()
-    .then( () => {
-      Swal.fire({
-        position: "top-center",
-        icon: "success",
-        title: "Sign Out Success!",
-        showConfirmButton: false,
-        timer: 1500
-      });
-    })
-    .catch( err => {
-      if(err) {
+      .then(() => {
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `${err.message}`,
+          position: "top-center",
+          icon: "success",
+          title: "Sign Out Success!",
+          showConfirmButton: false,
+          timer: 1500,
         });
-      }
-    })
-  }
+      })
+      .catch((err) => {
+        if (err) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: `${err.message}`,
+          });
+        }
+      });
+  };
   const links = (
     <>
       <li className="flex">
-        <NavLink to='/' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
           Home
         </NavLink>
       </li>
       <li className="flex">
-        <NavLink to='/about' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
           About Us
         </NavLink>
       </li>
       <li className="flex">
-        <NavLink to='/contact' className={({isActive}) => isActive ? 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] ': 'flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600'}>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
           Contact Us
         </NavLink>
       </li>
+      {
+        user? 
+        <li className="flex">
+        <NavLink
+          to="/update"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
+          Update Profile
+        </NavLink>
+      </li>
+      :
+      ''
+      }
     </>
   );
   return (
@@ -67,25 +104,41 @@ const Navbar = () => {
         <ul className="items-stretch hidden space-x-3 lg:flex">{links}</ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
           <div>
-            {
-              user ?
-              <p className="me-3">{user?.email}</p>
-              :
+            {user ? (
+              <img
+                alt=""
+                className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
+                src={user?.photoURL}
+              />
+            ) : (
               <></>
-            }
+            )}
           </div>
-         <>
-         {
-            user ? 
-            <Link onClick={handleSignOut}  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign Out</Link>
-            :
-            <>
-              <Link to='/login' className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign In</Link>
-              <Link to='/register' className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]">Sign Up</Link>
-            </>
-          }
-         </>
-          
+          <>
+            {user ? (
+              <Link
+                onClick={handleSignOut}
+                className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+              >
+                Sign Out
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  to="/register"
+                  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </>
         </div>
         <button className="p-4 lg:hidden">
           <svg
