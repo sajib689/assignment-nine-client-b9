@@ -12,6 +12,7 @@ import Contact from "../Components/Contact/Contact";
 import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 import PrivateRoute from './PrivateRoute';
 import User from "../Components/User/User";
+import AllServices from "../Components/AllServices/AllServices";
 
   const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ import User from "../Components/User/User";
         {
           path: "/user",
           element: <PrivateRoute><User/></PrivateRoute>,
+        },
+        {
+          path: "/allservices",
+          element: <PrivateRoute><AllServices/></PrivateRoute>,
         },
       ]
     },

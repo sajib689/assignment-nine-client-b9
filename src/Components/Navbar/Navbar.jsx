@@ -40,32 +40,21 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li className="flex">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive
-              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
-              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
-          }
-        >
-          About Us
-        </NavLink>
-      </li>
-      <li className="flex">
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive
-              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
-              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
-          }
-        >
-          Contact Us
-        </NavLink>
-      </li>
+     
       {user ? (
         <>
+        <li>
+          <NavLink
+            to="/allservices"
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+                : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+            }
+          >
+          Book Services
+          </NavLink>
+        </li>
         <li className="flex">
           <NavLink
             to="/update"
@@ -94,6 +83,30 @@ const Navbar = () => {
       ) : (
         ""
       )}
+       <li className="flex">
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li className="flex">
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+              : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
   return (
