@@ -171,7 +171,7 @@ const Register = () => {
           )}
         </>
         <button className="animate__animated animate__bounce block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-[#fc5a34] text-white">
-          Sign In
+          Sign up
         </button>
       </form>
       <div className="flex items-center pt-4 space-x-1">
