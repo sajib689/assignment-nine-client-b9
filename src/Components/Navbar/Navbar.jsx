@@ -4,7 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Swal } from "sweetalert2";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  
+
   const handleSignOut = () => {
     logout()
       .then(() => {
@@ -65,6 +65,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       {user ? (
+        <>
         <li className="flex">
           <NavLink
             to="/update"
@@ -77,6 +78,19 @@ const Navbar = () => {
             Update Profile
           </NavLink>
         </li>
+        <li className="flex">
+          <NavLink
+            to="/user"
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 text-[#fc5a34] "
+                : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
+            }
+          >
+           User
+          </NavLink>
+        </li>
+        </>
       ) : (
         ""
       )}
@@ -109,54 +123,57 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to='/' className="font-bold text-[16px] lg:text-xl md:text-xl">Sajib Industrail</Link>
+        <Link to="/" className="font-bold text-[16px] lg:text-xl md:text-xl">
+          Sajib Industrail
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-        {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-      <div className="items-center flex-shrink-0 flex lg:flex">
-    <div>
-      {user ? (
-       <div className="tooltip tooltip-bottom z-10 cursor-pointer" data-tip={user?.displayName}>
-         <img
-          alt=""
-          className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
-          src={user?.photoURL}
-        />
-       </div>
-      ) : (
-        <></>
-      )}
-    </div>
-    <>
-      {user ? (
-        <Link
-          onClick={handleSignOut}
-          className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
-        >
-          Sign Out
-        </Link>
-      ) : (
-        <>
-          <Link
-            to="/login"
-            className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
-          >
-            Sign In
-          </Link>
-          <Link
-            to="/register"
-            className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
-          >
-            Sign Up
-          </Link>
-        </>
-      )}
-    </>
-  </div>
+        <div className="items-center flex-shrink-0 flex lg:flex">
+          <div>
+            {user ? (
+              <div
+                className="tooltip tooltip-bottom z-10 cursor-pointer"
+                data-tip={user?.displayName}
+              >
+                <img
+                  alt=""
+                  className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
+                  src={user?.photoURL}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
+          <>
+            {user ? (
+              <Link
+                onClick={handleSignOut}
+                className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+              >
+                Sign Out
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  to="/register"
+                  className="btn bg-[#fc5a34] text-white rounded-none hover:bg-[#000]"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </>
+        </div>
       </div>
     </div>
   );
