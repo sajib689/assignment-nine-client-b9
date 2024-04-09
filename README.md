@@ -33,3 +33,4 @@ The Sajib Industrials website is a comprehensive platform designed to showcase o
 - [React AOS](https://www.npmjs.com/package/react-aos)
 - [Animate CSS](https://animate.style/)
 - [React Helmet](https://react-helmet.style/)
+- [React DotEnv](https://https://github.com/motdotla/dotenv#readme)
