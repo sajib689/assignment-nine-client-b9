@@ -109,7 +109,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to='/' className="font-bold text-xl">Sajib Industrail</Link>
+        <Link to='/' className="font-bold text-[16px] lg:text-xl md:text-xl">Sajib Industrail</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -117,14 +117,16 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      <div className="items-center flex-shrink-0 hidden lg:flex">
+      <div className="items-center flex-shrink-0 flex lg:flex">
     <div>
       {user ? (
-        <img
+       <div className="tooltip tooltip-bottom z-10 cursor-pointer" data-tip={user?.displayName}>
+         <img
           alt=""
           className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
           src={user?.photoURL}
         />
+       </div>
       ) : (
         <></>
       )}
