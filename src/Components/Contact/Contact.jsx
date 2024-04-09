@@ -15,7 +15,7 @@ const Contact = () => {
               Let's talk!
             </h2>
             <div data-aos="fade-right" className="dark:text-gray-600">
-              Vivamus in nisl metus? Phasellus.
+              If you have any questions?
             </div>
           </div>
           <img
