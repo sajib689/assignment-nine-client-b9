@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 AOS.init();
 const Register = () => {
   const { register, google, gitHub } = useContext(AuthContext);
@@ -87,7 +88,11 @@ const Register = () => {
       });
   };
   return (
-    <div
+   <>
+   <Helmet>
+        <title>Sajib Industrail | Register</title>
+      </Helmet>
+   <div
       data-aos="fade-right"
       className="w-full mb-[50px] bg-base-200 mx-auto mt-5 max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800"
     >
@@ -212,6 +217,7 @@ const Register = () => {
         </Link>
       </p>
     </div>
+   </>
   );
 };
 

@@ -87,7 +87,7 @@ const Navbar = () => {
                 : "flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
             }
           >
-           User
+           User Profile
           </NavLink>
         </li>
         </>
