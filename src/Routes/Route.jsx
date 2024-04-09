@@ -13,6 +13,7 @@ import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 import PrivateRoute from './PrivateRoute';
 import User from "../Components/User/User";
 import AllServices from "../Components/AllServices/AllServices";
+import Faq from "../Components/Faq/Faq";
 
   const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ import AllServices from "../Components/AllServices/AllServices";
         {
           path: "/contact",
           element: <Contact/>,
+        },
+        {
+          path: "/faq",
+          element: <Faq/>,
         },
         {
           path: "/update",
