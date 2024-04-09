@@ -26,19 +26,19 @@ const Banner = () => {
     >
       <SwiperSlide>
         <img className="w-full h-[50vh] lg:h-[90vh] md:h-[90vh] rounded-lg"
-          src={img1}
+          src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5kdXN0cmlhbHxlbnwwfHwwfHx8MA%3D%3D"
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img className="w-full h-[50vh] lg:h-[90vh] md:h-[90vh] rounded-lg"
-           src={img2}
+           src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kdXN0cmlhbHxlbnwwfHwwfHx8MA%3D%3D"
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img className="w-full h-[50vh] lg:h-[90vh] md:h-[90vh] rounded-lg"
-           src={img3}
+           src="https://w0.peakpx.com/wallpaper/588/944/HD-wallpaper-night-factory-industrial.jpg"
           alt=""
         />
       </SwiperSlide>
