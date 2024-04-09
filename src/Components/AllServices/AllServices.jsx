@@ -2,11 +2,16 @@ import { getBooks } from "../../Utlitis";
 import AllServiceCard from "./AllServiceCard";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { Helmet } from 'react-helmet';
 AOS.init();
 const AllServices = () => {
   const allServices = getBooks();
   return (
-    <div data-aos="fade-down-right" className="mt-8 mb-8 container p-2 mx-auto sm:p-4 dark:text-gray-800">
+   <>
+   <Helmet>
+        <title>Sajib Industrail | All Services</title>
+      </Helmet>
+   <div data-aos="fade-down-right" className="mt-8 mb-8 container p-2 mx-auto sm:p-4 dark:text-gray-800">
       <h2 className="mb-4 text-2xl font-semibold leading-tight">Invoices</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full text-xs">
@@ -39,6 +44,7 @@ const AllServices = () => {
         </table>
       </div>
     </div>
+   </>
   );
 };
 
