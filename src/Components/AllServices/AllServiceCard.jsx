@@ -23,7 +23,9 @@ const AllServiceCard = ({service}) => {
           <p>{price}</p>
         </td>
         <td className="p-3  ">
+          <button className="btn bg-orange-500 text-white border-0 btn-xs ">
           Pending
+          </button>
         </td>
       </tr>
     );
