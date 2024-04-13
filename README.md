@@ -1,6 +1,7 @@
 # Sajib Industrial
 
-Live Link: [https://github.com/programming-hero-web-course-4/b9a9-real-estate-sajib689]
+Live Link: [https://661a8413740ddc95aede1b00--aquamarine-pasca-e8492a.netlify.app/]
+
 ## Overview
 
 The Sajib Industrials website is a comprehensive platform designed to showcase our products and services, provide company information, and facilitate user interaction. Built with modern web technologies, the website offers a seamless browsing experience across various devices.
@@ -18,8 +19,8 @@ The Sajib Industrials website is a comprehensive platform designed to showcase o
 - **Customizable Profile:**
   - Personalize your profile by updating information, uploading profile pictures, and managing account settings to tailor your experience on the platform.
 
-
 ## Technologies Used
+
 - [React JS](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [DaisyUI CSS](https://daisyui.com/)
