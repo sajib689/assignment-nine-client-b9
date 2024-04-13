@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 AOS.init();
 
 const UpdateProfile = () => {
-  const { user,setUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [displayName, setDisplayName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
 
@@ -18,8 +18,7 @@ const UpdateProfile = () => {
       photoURL: photoURL,
     })
       .then(() => {
-        const updatedUser = { ...user, displayName: displayName, photoURL: photoURL };
-        
+      
         Swal.fire({
           position: "top-center",
           icon: "success",
