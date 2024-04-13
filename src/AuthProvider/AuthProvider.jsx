@@ -44,7 +44,9 @@ const AuthProvider = ({children}) => {
         login,
         google,
         gitHub,
-        logout
+        logout,
+        setUser,
+        getIdToken: () => user?.getIdToken()
     }
     return (
         <AuthContext.Provider value={authInfo}>

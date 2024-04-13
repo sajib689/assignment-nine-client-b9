@@ -1,31 +1,43 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { Swal } from "sweetalert2";
+import Swal from "sweetalert2"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
 AOS.init();
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user,setUser } = useContext(AuthContext);
   const [displayName, setDisplayName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
 
-  const handleUpdateProfile = (e) => {
+  const handleUpdateProfile = () => {
     updateProfile(user, {
       displayName: displayName,
       photoURL: photoURL,
-    });
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Your work has been saved",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+    })
+      .then(() => {
+        const updatedUser = { ...user, displayName: displayName, photoURL: photoURL };
+        
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Update Profile Success",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error("Error updating profile: ", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      });
   };
-  console.log(user);
+
   return (
     <>
       <Helmet>
