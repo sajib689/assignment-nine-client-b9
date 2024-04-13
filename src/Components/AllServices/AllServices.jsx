@@ -3,9 +3,11 @@ import AllServiceCard from "./AllServiceCard";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { Helmet } from 'react-helmet';
+import NoData from "../NoData/NoData";
 AOS.init();
 const AllServices = () => {
   const allServices = getBooks();
+  if (allServices.length === 0) return <NoData/>
   return (
    <>
    <Helmet>
